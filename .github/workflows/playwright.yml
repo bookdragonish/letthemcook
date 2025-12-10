@@ -1,0 +1,78 @@
+name: Tests and Linting
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2) Use Node LTS
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # 3) Install client dependencies
+      - name: Install client dependencies
+        working-directory: ./client
+        run: npm ci
+
+      # 4) Install Playwright browsers
+      - name: Install Playwright browsers
+        working-directory: ./client
+        run: npx playwright install --with-deps
+
+      # 5) Installs from server package.json
+      - name: Install server dependencies
+        working-directory: ./server
+        run: npm ci
+
+      # 6) Run lint on backend for safety
+      - name: Run backend ESLint
+        working-directory: ./server
+        run: npm run lint
+
+
+      # 7) Starts the backend server in the background
+      - name: Start server
+        working-directory: ./server
+        run: |
+          npm start &
+          sleep 3
+
+      # 8) Lint (ESLint)
+      - name: Run ESLint
+        working-directory: ./client
+        run: npm run lint
+
+      # 9) Run unit tests (Vitest)
+      - name: Run unit tests (Vitest)
+        working-directory: ./client
+        run: npx vitest --run
+
+      # 10) Run Playwright E2E tests
+      - name: Run E2E tests (Playwright)
+        working-directory: ./client
+        run: npm run test:e2e
+
+      # 11) Upload Playwright HTML report
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: client/playwright-report/
+          retention-days: 14

@@ -1,0 +1,27 @@
+.button_container{
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    justify-content: end;
+    gap: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.random_button, .sort_button {
+  margin-top: 8px;
+  padding: 10px 24px;
+  border: none;
+  background-color: var(--highlight-color);
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Elms Sans";
+}
+
+.random_button:hover, .sort_button:hover {
+  background-color: var(--secondary-highlight-color);
+  color: var(--font-color);
+}

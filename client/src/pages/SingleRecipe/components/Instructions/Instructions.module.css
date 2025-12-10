@@ -1,0 +1,9 @@
+.instructions {
+    text-wrap: wrap;
+}
+
+.instructions_header {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    justify-self: start;
+}

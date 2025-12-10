@@ -1,0 +1,149 @@
+.gridview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+/*AI GEN: THE PAGINATION WAS WRITTEN BY CLAUDE*/
+
+/* Pagination container */
+.page_nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+/* Button styling */
+.page_nav button {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0;
+  font-size: 2rem;
+  color: var(--font-color);
+  background: var(--primary-color);
+  border: 1px solid var(--disabled-color);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page_nav button p {
+  margin: 26px;
+  font-size: 1.6rem;
+}
+
+.page_nav button:hover {
+  background: var(--secondary-color);
+}
+
+.next_button p {
+  padding-left: 2px;
+  padding-bottom: 4px;
+}
+
+.prev_button p {
+  padding-right: 2px;
+  padding-bottom: 4px;
+}
+
+.page_nav button:active:not(:disabled) {
+  background: var(--secondary-color);
+}
+
+.page_nav button:disabled {
+  background: var(--disabled-color);
+  color: #5e5b5b;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Page counter text */
+.page_nav p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--secondary-font-color);
+  text-align: center;
+}
+
+@media screen and (max-width: 1660px) {
+  .gridview {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 1060px) {
+  .gridview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  h4 {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .gridview {
+    grid-template-columns: repeat(1, 1fr);
+    width: 90vw;
+  }
+}
+
+.loader_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+/*LOADER FROM https://css-loaders.com/hungry/*/
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 8px solid #d1914b;
+  box-sizing: border-box;
+  --c: no-repeat radial-gradient(farthest-side, #d64123 94%, #0000);
+  --b: no-repeat radial-gradient(farthest-side, #000 94%, #0000);
+  background: var(--c) 11px 15px, var(--b) 6px 15px, var(--c) 35px 23px,
+    var(--b) 29px 15px, var(--c) 11px 46px, var(--b) 11px 34px,
+    var(--c) 36px 0px, var(--b) 50px 31px, var(--c) 47px 43px,
+    var(--b) 31px 48px, #f6d353;
+  background-size: 15px 15px, 6px 6px;
+  animation: l4 3s infinite;
+}
+@keyframes l4 {
+  0% {
+    -webkit-mask: conic-gradient(#0000 0, #000 0);
+  }
+  16.67% {
+    -webkit-mask: conic-gradient(#0000 60deg, #000 0);
+  }
+  33.33% {
+    -webkit-mask: conic-gradient(#0000 120deg, #000 0);
+  }
+  50% {
+    -webkit-mask: conic-gradient(#0000 180deg, #000 0);
+  }
+  66.67% {
+    -webkit-mask: conic-gradient(#0000 240deg, #000 0);
+  }
+  83.33% {
+    -webkit-mask: conic-gradient(#0000 300deg, #000 0);
+  }
+  100% {
+    -webkit-mask: conic-gradient(#0000 360deg, #000 0);
+  }
+}

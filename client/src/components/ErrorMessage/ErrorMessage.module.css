@@ -1,0 +1,56 @@
+/* AI GEN */
+
+.message_box {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+
+    background-color: #ffe5e5;
+    /* lys rød bakgrunn */
+    border: 2px solid #ff4d4d;
+    color: #a80000;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    max-width: 90%;
+    width: fit-content;
+    text-align: center;
+
+    animation: slideDown 0.35s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.error_text {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.refresh_button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.refresh_button:hover {
+    background-color: #e03d3d;
+}

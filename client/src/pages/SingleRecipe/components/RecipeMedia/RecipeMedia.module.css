@@ -1,0 +1,17 @@
+.recipe_media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recipe_image {
+    height: 50vh;
+    width: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .recipe_image {
+        width: 90%;
+        height: auto;
+    }
+}

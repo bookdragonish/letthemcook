@@ -1,0 +1,38 @@
+{
+  "page": 1,
+  "limit": 5,
+  "total": 30,
+  "totalPages": 6,
+  "data": [
+    {
+      "idMeal": "101",
+      "strMeal": "Spaghetti Carbonara",
+      "strCategory": "Pasta",
+      "strMealThumb": "https://example.com/images/carbonara.jpg"
+    },
+    {
+      "idMeal": "102",
+      "strMeal": "Vegan Bowl",
+      "strCategory": "Vegan",
+      "strMealThumb": "https://example.com/images/buddha-bowl.jpg"
+    },
+    {
+      "idMeal": "103",
+      "strMeal": "Chicken Tikka Masala",
+      "strCategory": "Chicken",
+      "strMealThumb": "https://example.com/images/tikka.jpg"
+    },
+    {
+      "idMeal": "104",
+      "strMeal": "Beef Stir Fry",
+      "strCategory": "Beef",
+      "strMealThumb": "https://example.com/images/stirfry.jpg"
+    },
+    {
+      "idMeal": "105",
+      "strMeal": "Chocolate Lava Cake",
+      "strCategory": "Dessert",
+      "strMealThumb": "https://example.com/images/lavacake.jpg"
+    }
+  ]
+}

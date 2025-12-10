@@ -1,0 +1,11 @@
+.cross_button {
+    width: 50px;
+    float: right;
+    pointer-events: none;
+}
+
+.cross_button img {
+    height: 50px;
+    pointer-events: auto;
+    cursor: pointer;
+}
